@@ -108,6 +108,10 @@ $fields = [
     'TITLE' => "Property Finder - WhatsApp - $reference",
     'CATEGORY_ID' => 24,
     'SOURCE_ID' => 'UC_PLY23S',
+    'UF_CRM_62A5B8743F62A' => $phone,
+    'UF_CRM_1680511307544' => $message,
+    'UF_CRM_1739873044322' => $tracking_link,
+    'UF_CRM_1739890164914' => $listing_link,
     'COMMENTS' => $comments,
     'UF_CRM_1739873044322' => $tracking_link,
 ];
