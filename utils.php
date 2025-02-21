@@ -77,6 +77,7 @@ function getResponsiblePerson(string $searchValue, string $searchType): ?int
                 '%NAME' => $firstName,
                 '%SECOND_NAME' => $middleName,
                 '%LAST_NAME' => $lastName,
+                '!ID' => 3
             ]);
         }
 
@@ -85,6 +86,7 @@ function getResponsiblePerson(string $searchValue, string $searchType): ?int
         if ($agentEmail) {
             return getUserId([
                 'EMAIL' => $agentEmail,
+                '!ID' => 3
             ]);
         } else {
             error_log(
@@ -95,6 +97,7 @@ function getResponsiblePerson(string $searchValue, string $searchType): ?int
     } else if ($searchType === 'phone') {
         return getUserId([
             '%PERSONAL_MOBILE' => $searchValue,
+            '!ID' => 3
         ]);
     }
 
