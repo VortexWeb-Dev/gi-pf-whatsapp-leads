@@ -69,19 +69,17 @@ function getResponsiblePerson(string $searchValue, string $searchType): ?int
         if ($ownerName) {
             $nameParts = explode(' ', trim($ownerName));
 
-            $firstName = $nameParts[0] ?? null;
+            $firstName = array_shift($nameParts) ?? null;
             $lastName = count($nameParts) > 1 ? array_pop($nameParts) : null;
-            $middleName = count($nameParts) > 1 ? implode(' ', array_slice($nameParts, 1)) : null;
+            $middleName = !empty($nameParts) ? implode(' ', $nameParts) : null;
 
             return getUserId([
                 '%NAME' => $firstName,
                 '%SECOND_NAME' => $middleName,
                 '%LAST_NAME' => $lastName,
-                '!ID' => 3,
-                '!ID' => 268
+                '!ID' => [3, 268]
             ]);
         }
-
 
         $agentEmail = $listing['ufCrm37AgentEmail'] ?? null;
         if ($agentEmail) {
