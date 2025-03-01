@@ -104,6 +104,16 @@ $comments .= "WhatsApp Number: $phone\n\n";
 $comments .= "Message: $message\n";
 $comments .= "\nLead from Property Finder";
 
+$contactId = createContact([
+    'NAME' => 'Unknown from PF WhatsApp (' . $phone . ')',
+    'PHONE' => [
+        [
+            'VALUE' => $phone,
+            'VALUE_TYPE' => 'WORK'
+        ]
+    ]
+]);
+
 $fields = [
     'TITLE' => "Property Finder - WhatsApp - $reference",
     'CATEGORY_ID' => 24,
@@ -113,6 +123,7 @@ $fields = [
     'UF_CRM_1739945676' => $listing_link,
     'COMMENTS' => $comments,
     'UF_CRM_1739873044322' => $tracking_link,
+    'CONTACT_ID' => $contactId
 ];
 
 // Get listing owner

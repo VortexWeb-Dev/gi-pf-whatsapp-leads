@@ -124,3 +124,12 @@ function getUserId(array $filter): ?int
 
     return (int)$response['result'][0]['ID'];
 }
+
+function createContact($fields)
+{
+    $response = CRest::call('crm.contact.add', [
+        'fields' => $fields
+    ]);
+
+    return $response['result'];
+}
