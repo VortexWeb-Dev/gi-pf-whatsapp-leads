@@ -124,7 +124,7 @@ $fields = [
     'COMMENTS' => $comments,
     'UF_CRM_1739873044322' => $tracking_link,
     'CONTACT_ID' => $contactId,
-    'UF_CRM_1598274004881' => getPropertyPrice($reference) ?? '',
+    'OPPORTUNITY' => getPropertyPrice($reference) ?? '',
 ];
 
 // Get listing owner
