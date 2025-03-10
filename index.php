@@ -104,8 +104,10 @@ $comments .= "WhatsApp Number: $phone\n\n";
 $comments .= "Message: $message\n";
 $comments .= "\nLead from Property Finder";
 
+$title = "Property Finder - WhatsApp - $reference";
+
 $contactId = createContact([
-    'NAME' => 'Unknown from PF WhatsApp (' . $phone . ')',
+    'NAME' => $title,
     'PHONE' => [
         [
             'VALUE' => $phone,
@@ -115,7 +117,7 @@ $contactId = createContact([
 ]);
 
 $fields = [
-    'TITLE' => "Property Finder - WhatsApp - $reference",
+    'TITLE' => $title,
     'CATEGORY_ID' => 24,
     'SOURCE_ID' => 'CALLBACK',
     'UF_CRM_62A5B8743F62A' => $phone,
